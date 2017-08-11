@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
-    <script src="/moment.min.js"></script>
-    <script src="/moment-precise-range.js"></script>
-    <script src="https://rawgit.com/dawsonbotsford/arrford/master/bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdn.rawgit.com/codebox/moment-precise-range/ea2f2068/moment-precise-range.js"></script>
+    <script src="https://cdn.rawgit.com/dawsbot/arrford/c2c7c379/bundle.js"></script>
     <style type="text/css">
 	    #chevron {
 		    opacity: 1;
@@ -50,7 +50,7 @@
 	  </section>
 	  <section class="hero is-dark" id="section-countup">
 		  <div class="hero-body">
-			  <div class="container">					
+			  <div class="container">
 				  <p>Mother 3 has been out in Japan for</p>
 				  <p class="title" id="time-container">
 					  over 11 years (since April 20, 2006).
@@ -98,7 +98,7 @@
 						  <a href="https://mmoexaminer.com/disney-want-mother-3-localized/">
 							  <div class="box">
 								  <figure class="image is-16by9" style="margin-bottom: 0.7em;">
-								  	<img src="/images/mmoexaminer-glyphmasterson-july-2017.png">
+								  	<img src="/images/mmoexaminer-glyphmasterson-july-2017.png" alt="Screenshot of article">
 								  </figure>
 								  <p><strong>Does Disney Want Mother 3 Localized?</strong></p>
 								  <p><small>MMOExaminer – July 20, 2017</small></p>
@@ -109,7 +109,7 @@
 						  <a href="https://gonintendo.com/stories/284390-even-adult-swim-wants-to-see-mother-3-localized">
 							  <div class="box">
 								  <figure class="image is-16by9" style="margin-bottom: 0.7em;">
-								  	<img src="/images/gonintendo-rawmeatcowboy-july-2017.png">
+								  	<img src="/images/gonintendo-rawmeatcowboy-july-2017.png" alt="Screenshot of article">
 								  </figure>
 								  <p><strong>Even Adult Swim Wants to See Mother 3 Localized</strong></p>
 								  <p><small>GoNintendo – July 4, 2017</small></p>
@@ -120,7 +120,7 @@
 						  <a href="http://kotaku.com/seriously-nintendo-its-time-for-mother-3-1796533984">
 							  <div class="box">
 								  <figure class="image is-16by9" style="margin-bottom: 0.7em;">
-								  	<img src="/images/kotaku-chris-kohler-june-2017.png">
+								  	<img src="/images/kotaku-chris-kohler-june-2017.png" alt="Screenshot of article">
 								  </figure>
 								  <p><strong>Seriously, Nintendo: It's Time For Mother 3</strong></p>
 								  <p><small>Kotaku – June 30, 2017</small></p>
@@ -131,7 +131,7 @@
 						  <a href="https://www.polygon.com/2017/6/27/15882098/star-fox-2-super-nintendo-classic-edition-mother-3">
 							  <div class="box">
 								  <figure class="image is-16by9" style="margin-bottom: 0.7em;">
-								  	<img src="/images/polygon-allegra-frank-june-2017.png">
+								  	<img src="/images/polygon-allegra-frank-june-2017.png" alt="Screenshot of article">
 								  </figure>
 								  <p><strong>With Star Fox 2 finally on the way, Nintendo fans demand Mother 3 next</strong></p>
 								  <p><small>Polygon – June 27, 2017</small></p>
@@ -170,7 +170,7 @@
 							  This page was thrown together in a few hours time. Open-source projects like <a href="http://bulma.io/">Bulma</a>, <a href="http://fontawesome.io">Font Awesome</a>, <a href="http://momentjs.com/">moment.js</a>, <a href="https://github.com/codebox/moment-precise-range">moment-precise-range</a>, <a href="https://github.com/dawsbot/arrford">arrford</a>, and <a href="https://jquery.com">JQuery</a> made this page possible.
 						  </p>
 						  <p>
-							  Follow me on <a href="http://twitter.com/crownsedge/">Twitter</a>. <small>If you're Nintendo and you need this domain, feel free to <a href="mailto:ruth@tazmily.com">hit me up</a>. <small>I don't bite.</small>
+							  Follow me on <a href="http://twitter.com/crownsedge/">Twitter</a>. <small>If you're Nintendo and you need this domain, feel free to <a href="mailto:ruth@tazmily.com">hit me up</a>. <small>I don't bite.</small></small>
 						  </p>
 					  </div>
 				  </div>
@@ -178,19 +178,19 @@
 		  </div>
 	  </section>
 	  
-	  <script>
+		<script>
 			$(window).scroll(function(event){
-				$("#chevron").toggleClass("scrolled", ($(this).scrollTop() > 16));
+				$("#chevron").toggleClass("scrolled", ($(this).scrollTop() > 24));
 			});
-		  
-		  function updateCountupTimer() {
-			  // Do the math
+			
+			function updateCountupTimer() {
+				// Do the math
 				var m1 = moment('2006-04-19 15:00:00','YYYY-MM-DD HH:mm:ss'); // Midnight JST in UTC.
 				var m2 = moment();
-				var diff = moment.preciseDiff(m1, m2, true)
+				var diff = moment.preciseDiff(m1, m2, true);
 				
 				// Generate output
-				result = []
+				result = [];
 				// If the number is not 0, push the number and year into the array, adding an s on the end if the number is not 1.
 				if (diff['years'] != 0) {result.push(diff['years'].toString() + " year" + ((diff['years'] != 1 ? "s" : "")));}
 				if (diff['months'] != 0) {result.push(diff['months'].toString() + " month" + ((diff['months'] != 1 ? "s" : "")));}
