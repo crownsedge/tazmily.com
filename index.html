@@ -183,27 +183,29 @@
 				$("#chevron").toggleClass("scrolled", ($(this).scrollTop() > 24));
 			});
 			
-			function updateCountupTimer() {
-				// Do the math
-				var m1 = moment('2006-04-19 15:00:00','YYYY-MM-DD HH:mm:ss'); // Midnight JST in UTC.
-				var m2 = moment();
-				var diff = moment.preciseDiff(m1, m2, true);
-				
-				// Generate output
-				result = [];
-				// If the number is not 0, push the number and year into the array, adding an s on the end if the number is not 1.
-				if (diff['years'] != 0) {result.push(diff['years'].toString() + " year" + ((diff['years'] != 1 ? "s" : "")));}
-				if (diff['months'] != 0) {result.push(diff['months'].toString() + " month" + ((diff['months'] != 1 ? "s" : "")));}
-				if (diff['days'] != 0) {result.push(diff['days'].toString() + " day" + ((diff['days'] != 1 ? "s" : "")));}
-				if (diff['hours'] != 0) {result.push(diff['hours'].toString() + " hour" + ((diff['hours'] != 1 ? "s" : "")));}
-				if (diff['minutes'] != 0) {result.push(diff['minutes'].toString() + " minute" + ((diff['minutes'] != 1 ? "s" : "")));}
-				if (diff['seconds'] != 0) {result.push(diff['seconds'].toString() + " second" + ((diff['seconds'] != 1 ? "s" : "")));}
-				
-				// Place into document. arrford handles commaandifying.
-				$("#time-container").html(arrford(result) + ".");
-			}
-			updateCountupTimer();
-			setInterval(updateCountupTimer, 1000);
+			$(document).ready(function(event){
+				function updateCountupTimer() {
+					// Do the math
+					var m1 = moment('2006-04-19 15:00:00','YYYY-MM-DD HH:mm:ss'); // Midnight JST in UTC.
+					var m2 = moment();
+					var diff = moment.preciseDiff(m1, m2, true);
+					
+					// Generate output
+					result = [];
+					// If the number is not 0, push the number and year into the array, adding an s on the end if the number is not 1.
+					if (diff['years'] != 0) {result.push(diff['years'].toString() + " year" + ((diff['years'] != 1 ? "s" : "")));}
+					if (diff['months'] != 0) {result.push(diff['months'].toString() + " month" + ((diff['months'] != 1 ? "s" : "")));}
+					if (diff['days'] != 0) {result.push(diff['days'].toString() + " day" + ((diff['days'] != 1 ? "s" : "")));}
+					if (diff['hours'] != 0) {result.push(diff['hours'].toString() + " hour" + ((diff['hours'] != 1 ? "s" : "")));}
+					if (diff['minutes'] != 0) {result.push(diff['minutes'].toString() + " minute" + ((diff['minutes'] != 1 ? "s" : "")));}
+					if (diff['seconds'] != 0) {result.push(diff['seconds'].toString() + " second" + ((diff['seconds'] != 1 ? "s" : "")));}
+					
+					// Place into document. arrford handles commaandifying.
+					$("#time-container").html(arrford(result) + ".");
+				}
+				updateCountupTimer();
+				setInterval(updateCountupTimer, 1000);
+			})
 		</script>
   </body>
 </html>
