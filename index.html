@@ -24,6 +24,19 @@
   </head>
   <body>
 	  <section class="hero is-primary is-fullheight" id="section-intro">
+		  <div class="hero-head" style="visibility: hidden;"> <!-- we need this to push the text back down because otherwise the chevron pushes the text out from the middle of the page -->
+			  <div class="container">
+				  <div class="tabs is-centered">
+					  <ul>
+						  <li>
+							  <a>
+								  &#8203;
+							  </a>
+						  </li>
+					  </ul>
+				  </div>
+			  </div>
+		  </div>
 		  <div class="hero-body">
 		    <div class="container">
 			    <p class="subtitle is-3">
@@ -41,10 +54,18 @@
 		    </div>
 		  </div>
 		  <div class="hero-foot">
-			  <div class="container has-text-centered">
-				  <span class="icon" style="padding-bottom: 1.5em;" id="chevron">
-					  <i class="fa fa-chevron-down"></i>
-					</span>
+			  <div class="container">
+				  <div class="tabs is-centered">
+					  <ul>
+						  <li class="is-active">
+							  <a>
+								  <span class="icon" id="chevron">
+									  <i class="fa fa-chevron-down"></i>
+									</span>
+								</a>
+						  </li>
+					  </ul>
+				  </div>
 			  </div>
 		  </div>
 	  </section>
